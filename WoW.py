@@ -7,123 +7,73 @@ import math
 Alliance
 '''
 class Alliance:
-    def __init__(self, Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname):
-        self.health = Ahealth
-        self.attack = Aattack
-        self.range = Arange
-        self.luck = Aluck
-        self.defence = Adefence
-        self.magic = Amagic
-        self.name = Aname
+    def __init__(self, Ahealth, Aattack, Adefence, Aname):
+        self.Ahealth = Ahealth
+        self.Aattack = Aattack
+        self.Adefence = Adefence
+        self.Aname = Aname
 
     def gethealth(self):
-        return self.health
+        return self.Ahealth
     def getattack(self):
-        return self.attack
-    def getluck(self):
-        return self.luck
-    def getrange(self):
-        return self.range
+        return self.Aattack
     def getdefence(self):
-        return self.defence
-    def getMagic(self):
-        return self.magic
+        return self.Adefence
     def getname(self):
-        return self.name
+        return self.Aname
 
     def sethealth(self, newhealth):
-        self.health = newhealth
+        self.Ahealth = newhealth
     def setattack(self, newattack):
-        self.attack = newattack
-    def setluck(self, newluck):
-        self.luck = newluck
-    def setrange(self, newrange):
-        self.range = newrange
+        self.Aattack = newattack
     def setdefence(self, newdefence):
-        self.defence = newdefence
-    def setMagic(self, newMagic):
-        self.magic = newMagic
+        self.Adefence = newdefence
     def setname(self, newname):
-        self.name = newname
+        self.Aname = newname
 
 class Clovek(Alliance):
-    def __init__(self, Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname):
-        super().__init__(Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname)
+    def __init__(self, Ahealth, Aattack, Adefence, Aname):
+        super().__init__(Ahealth, Aattack, Adefence, Aname)
 
 class Dwarf(Alliance):
-    def __init__(self, Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname):
-        super().__init__(Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname)
+    def __init__(self, Ahealth, Aattack, Adefence, Aname):
+        super().__init__(Ahealth, Aattack, Adefence, Aname)
 
 
 class NightElf(Alliance):
-    def __init__(self, Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname):
-        super().__init__(Ahealth, Aattack, Aluck, Arange, Adefence, Amagic, Aname)
+    def __init__(self, Ahealth, Aattack, Adefence, Aname):
+        super().__init__(Ahealth, Aattack, Adefence, Aname)
 #------------------------------------------------------------------------------------#
 
 '''
 Horda
 '''
-class Horde:
-    def __init__(self, Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname):
-        self.health = Hhealth
-        self.attack = Hattack
-        self.range = Hrange
-        self.luck = Hluck
-        self.defence = Hdefence
-        self.magic = Hmagic
-        self.name = Hname
+class Horde(Alliance):
+    def __init__(self, Ahealth, Aattack, Adefence, Aname):
+        super().__init__(Ahealth, Aattack, Adefence, Aname)   
 
-    def gethealth(self):
-        return self.health
-    def getattack(self):
-        return self.attack
-    def getluck(self):
-        return self.luck
-    def getrange(self):
-        return self.range
-    def getdefence(self):
-        return self.defence
-    def getMagic(self):
-        return self.magic
-    def getname(self):
-        return self.name
+class Orc(Alliance):
+    def __init__(self, Hhealth, Hattack, Hdefence, Hname):
+        super().__init__(Hhealth, Hattack, Hdefence, Hname)
 
-    def sethealth(self, newhealth):
-        self.health = newhealth
-    def setattack(self, newattack):
-        self.attack = newattack
-    def setluck(self, newluck):
-        self.luck = newluck
-    def setrange(self, newrange):
-        self.range = newrange
-    def setdefence(self, newdefence):
-        self.defence = newdefence
-    def setMagic(self, newMagic):
-        self.magic = newMagic
-    def setname(self, newname):
-        self.name = newname
+class Undead(Alliance):
+    def __init__(self, Hhealth, Hattack, Hdefence, Hname):
+        super().__init__(Hhealth, Hattack, Hdefence, Hname)
 
-class Orc(Horde):
-    def __init__(self, Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname):
-        super().__init__(Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname)
-
-class Undead(Horde):
-    def __init__(self, Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname):
-        super().__init__(Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname)
-
-class BloodElf(Horde):
-    def __init__(self, Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname):
-        super().__init__(Hhealth, Hattack, Hrange, Hluck, Hmagic, Hdefence, Hname)
+class BloodElf(Alliance):
+    def __init__(self, Hhealth, Hattack, Hdefence, Hname):
+        super().__init__(Hhealth, Hattack, Hdefence, Hname)
 #------------------------------------------------------------------------------------#
 
 '''
 Enemy
 '''
 class Enemy:
-    def __init__(self, Ehealth, Eattack, Especial, Ename):
+    def __init__(self, Ehealth, Eattack, Edefence, Especial, Ename):
         self.health = Ehealth
         self.attack = Eattack
         self.special = Especial
+        self.defence = Edefence
         self.name = Ename
 
     def gethealth(self):
@@ -132,6 +82,8 @@ class Enemy:
         return self.attack
     def getSpecial (self):
         return self.special
+    def getDefence(self):
+        return self.defence
     def getname(self):
         return self.name
 
@@ -148,10 +100,10 @@ class Enemy:
 Boss
 """
 class Boss (Enemy):
-    def __init__(self, Bhealth, Battack, Bspecial, Bchance, Bname, BsuperMove):
-        super().__init__(Bhealth, Battack, Bspecial, Bchance, Bname)
+    def __init__(self, Ehealth, Eattack, Edefence, Especial,EsuperMove, Ename):
+        super().__init__(Ehealth, Eattack, Edefence, Especial, Ename)
 
-        self.superMove = BsuperMove
+        self.superMove = EsuperMove
 
     def getSuper(self):
         return self.superMove
@@ -180,7 +132,7 @@ def welcomescreen():
     password = input("ENTER YOUR PASSWORD: ")
 
 
-def game():
+def vytvoreniepostavy():
     print("*--------------------------------------*")
     pohlavie = input("CHOOSE YOUR GENDER(man/woman): ")
     while pohlavie != "man" and pohlavie != "woman":
@@ -202,7 +154,7 @@ def game():
         print("")
         print("")
         print("*---------------ALLIANCE---------------*")
-        print("1. Clovek ")
+        print("1. Human ")
         print("2. Dwarf ")
         print("3. Night Elf ")
         print("*--------------------------------------*")
@@ -225,76 +177,97 @@ def game():
                 print("Invalin input...")
                 Aliance = input("CHOOSE YOUR CLASS: ")
 
+            
+
             if classs == "1":
-                warriorattack = 10
-                warriordefence = 7
-                warriorluck = 4
-                warriorrange = 4
-                warriormagic = 1
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
+                
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", warriorattack)
-                print("DEFENCE: ", warriordefence)
-                print("LUCK: ", warriorluck)
-                print("RANGE: ", warriorrange)
-                print("MAGIC: ", warriormagic)
+                print("ATTACK: 10")
+                print("DEFENCE: 10")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "2":
-                paladinattack = 10
-                paladindefence = 8
-                paladinluck = 4
-                paladinrange = 3
-                paladinmagic = 4
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", paladinattack)
-                print("DEFENCE: ", paladindefence)
-                print("LUCK: ", paladinluck)
-                print("RANGE: ", paladinrange)
-                print("MAGIC: ", paladinmagic)
+                print("ATTACK: 15")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "3":
-                hunterattack = 10
-                hunterdefence = 7
-                hunterluck = 2
-                hunterrange = 5
-                huntermagic = 2
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", hunterattack)
-                print("DEFENCE: ", hunterdefence)
-                print("LUCK: ", hunterluck)
-                print("RANGE: ", hunterrange)
-                print("MAGIC: ", huntermagic)
+                print("ATTACK: 17")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "4":
-                rogueattack = 8
-                roguedefence = 8
-                rogueluck = 3
-                roguerange = 6
-                roguemagic = 5
-                print("")
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
+
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("NAME: ", name)
-                print("ATTACK: ", rogueattack)
-                print("DEFENCE: ", roguedefence)
-                print("LUCK: ", rogueluck)
-                print("RANGE: ", roguerange)
-                print("MAGIC: ", roguemagic)
+                print("ATTACK: 15")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
+
+    
 
         elif Aliance == "2":
             print("")
@@ -310,74 +283,92 @@ def game():
                 print("Invalid input...")
                 Aliance = input("CHOOSE YOUR CLASS: ")
 
+            
+
             if classs == "1":
-                warriorattack = 10
-                warriordefence = 7
-                warriorluck = 4
-                warriorrange = 4
-                warriormagic = 1
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", warriorattack)
-                print("DEFENCE: ", warriordefence)
-                print("LUCK: ", warriorluck)
-                print("RANGE: ", warriorrange)
-                print("MAGIC: ", warriormagic)
+                print("ATTACK: 10")
+                print("DEFENCE: 10")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "2":
-                paladinattack = 10
-                paladindefence = 8
-                paladinluck = 4
-                paladinrange = 3
-                paladinmagic = 4
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", paladinattack)
-                print("DEFENCE: ", paladindefence)
-                print("LUCK: ", paladinluck)
-                print("RANGE: ", paladinrange)
-                print("MAGIC: ", paladinmagic)
+                print("ATTACK: 15")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "3":
-                hunterattack = 10
-                hunterdefence = 7
-                hunterluck = 2
-                hunterrange = 5
-                huntermagic = 2
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", hunterattack)
-                print("DEFENCE: ", hunterdefence)
-                print("LUCK: ", hunterluck)
-                print("RANGE: ", hunterrange)
-                print("MAGIC: ", huntermagic)
+                print("ATTACK: 17")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "4":
-                rogueattack = 8
-                roguedefence = 8
-                rogueluck = 3
-                roguerange = 6
-                roguemagic = 5
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("NAME: ", name)
-                print("ATTACK: ", rogueattack)
-                print("DEFENCE: ", roguedefence)
-                print("LUCK: ", rogueluck)
-                print("RANGE: ", roguerange)
-                print("MAGIC: ", roguemagic)
+                print("ATTACK: 12")
+                print("DEFENCE: 12")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
@@ -395,75 +386,94 @@ def game():
                 print("Invalid input...")
                 Aliance = input("CHOOSE YOUR CLASS: ")
 
+            
+
             if classs == "1":
-                mageattack = 9.5
-                magedefence = 6
-                mageluck = 5
-                magerange = 9
-                magemagic = 8
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
+
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", mageattack)
-                print("DEFENCE: ", magedefence)
-                print("LUCK: ", mageluck)
-                print("RANGE: ", magerange)
-                print("MAGIC: ", magemagic)
+                print("ATTACK: 9")
+                print("DEFENCE: 15")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "2":
-                druidattack = 9
-                druiddefence = 5
-                druidluck = 7
-                druidrange = 8
-                druidmagic = 7
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", druidattack)
-                print("DEFENCE: ", druiddefence)
-                print("LUCK: ", druidluck)
-                print("RANGE: ", druidrange)
-                print("MAGIC: ", druidmagic)
+                print("ATTACK: 15")
+                print("DEFENCE: 6")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "3":
-                hunterattack = 10
-                hunterdefence = 7
-                hunterluck = 2
-                hunterrange = 5
-                huntermagic = 2
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", hunterattack)
-                print("DEFENCE: ", hunterdefence)
-                print("LUCK: ", hunterluck)
-                print("RANGE: ", hunterrange)
-                print("MAGIC: ", huntermagic)
+                print("ATTACK: 17")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "4":
-                rogueattack = 8
-                roguedefence = 8
-                rogueluck = 3
-                roguerange = 6
-                roguemagic = 5
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", rogueattack)
-                print("DEFENCE: ", roguedefence)
-                print("LUCK: ", rogueluck)
-                print("RANGE: ", roguerange)
-                print("MAGIC: ", roguemagic)
+                print("ATTACK: 12")
+                print("DEFENCE: 12")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
                 
@@ -521,6 +531,60 @@ def game():
                     print("1. WITHDRAW: ")
                     print("2. DEPOSIT: ")
                     print("*----------------------------------*")
+                    print("")
+                    print("")
+                    print("Look, you got your first tasks...")
+                    print("--------------------TASKS--------------------")
+                    print("1. Kill 2 enemies...")
+                    print("2. Move to the next city and take from the bank 2000 g and bring them back to Palace...")
+                    print("--------------------------------------------")
+                    print("")
+                    choose = input("CHOOSE (1/2): ")
+                    while choose != "1" and choose != "2":
+                        print("Invalid input...")
+                        choose = input("CHOOSE (1/2): ")
+
+                    if choose == "1":
+                        print("")
+                        print("[TASK 1 STARTED]")
+                        print("You are out of the bank...")
+                        print("Ah, look there are some enemies...")
+                        print("They want to attack you..")
+                        print("")
+                        a = input("")
+                        print("player: [ " ,name, " ] took -20 of his 100 health points")
+                        print("player: [ " ,name, " ] killed an enemy")
+                        print("player: [ " ,name, " ] took -12 of his 100 health points")
+                        print("player: [ " ,name, " ] killed an 2nd enemy")
+                        print("")
+                        print("[TASK 1 COMPLETED]")
+                        a = input()
+                        print("")
+                        print("[TASK 2 STARTED]")
+                        print("Lets go to the next city...")
+                        print("player: [ " ,name, " ] moved to the next city")
+                        print("player: [ " ,name, " ] took 2000 g from bank")
+                        print("player: [ " ,name, " ] brought 2000 g came back to his city")
+                        print("player: [ " ,name, " ] moved to the Palace")
+                        print("player: [ " ,name, " ] gave 2000 g to the Palace")
+                        print("[TASK 2 COMPLETED]")
+                        print("")
+                        print("")
+                        print("You made great job today !!!")
+                        print("You can go to the pub and drink some beer...")
+                        print("player: [ " ,name, " ] moved to the pub")
+                        print("player: [ " ,name, " ] drank a beer")
+                        print("player: [ " ,name, " ] drank next beer")
+                        print("player: [ " ,name, " ] drank next beer")
+                        print("player: [ " ,name, " ] came back to home")
+                        c = input()
+                        print("")
+                        print("In front of your house is some Horde enemie...")
+                        print("He wants to kill you...")
+                        
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
 
                 elif choose == "2":
                     print("")
@@ -535,10 +599,197 @@ def game():
                     print("2. DEPOSIT: ")
                     print("*----------------------------------*")
 
+                    print("")
+                    print("")
+                    print("Look, you got your first tasks...")
+                    print("--------------------TASKS--------------------")
+                    print("1. Kill 2 enemies...")
+                    print("2. Move to the next city and take from the bank 2000 g and bring them back to Palace...")
+                    print("--------------------------------------------")
+                    print("")
+
+                    choose = input("CHOOSE (1/2): ")
+                    while choose != "1" and choose != "2":
+                        print("Invalid input...")
+                        choose = input("CHOOSE (1/2): ")
+
+                    if choose == "1":
+                        print("")
+                        print("[TASK 1 STARTED]")
+                        print("You are out of the bank...")
+                        print("Ah, look there are some enemies...")
+                        print("They want to attack you..")
+                        print("")
+                        a = input("")
+                        print("player: [ " ,name, " ] took -20 of his 100 health points")
+                        print("player: [ " ,name, " ] killed an enemy")
+                        print("player: [ " ,name, " ] took -12 of his 100 health points")
+                        print("player: [ " ,name, " ] killed an 2nd enemy")
+                        print("")
+                        print("[TASK 1 COMPLETED]")
+                        a = input()
+                        print("")
+                        print("[TASK 2 STARTED]")
+                        print("Lets go to the next city...")
+                        print("player: [ " ,name, " ] moved to the next city")
+                        print("player: [ " ,name, " ] took 2000 g from bank")
+                        print("player: [ " ,name, " ] brought 2000 g came back to his city")
+                        print("player: [ " ,name, " ] moved to the Palace")
+                        print("player: [ " ,name, " ] gave 2000 g to the Palace")
+                        print("[TASK 2 COMPLETED]")
+                        print("")
+                        print("")
+                        print("You made great job today !!!")
+                        print("You can go to the pub and drink some beer...")
+                        print("player: [ " ,name, " ] moved to the pub")
+                        print("player: [ " ,name, " ] drank a beer")
+                        print("player: [ " ,name, " ] drank next beer")
+                        print("player: [ " ,name, " ] drank next beer")
+                        print("player: [ " ,name, " ] came back to home")
+                        c = input()
+                        print("")
+                        print("In front of your house is some Horde enemie...")
+                        print("He wants to kill you...")
+                        
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+
+                    elif choose == "2":
+                        print("")
+                        print("[TASK 1 STARTED]")
+                        print("Lets go to the next city...")
+                        print("player: [ " ,name, " ] moved to the next city")
+                        print("player: [ " ,name, " ] took 2000 g from bank")
+                        print("player: [ " ,name, " ] brought 2000 g came back to his city")
+                        print("player: [ " ,name, " ] moved to the Palace")
+                        print("player: [ " ,name, " ] gave 2000 g to the Palace")
+                        print("[TASK 1 COMPLETED]")
+                        a = input()
+                        print("")
+                        print("[TASK 1 STARTED]")
+                        print("You are out of the bank...")
+                        print("Ah, look there are some enemies...")
+                        print("They want to attack you..")
+                        print("")
+                        a = input("")
+                        print("player: [ " ,name, " ] took -20 of his 100 health points")
+                        print("player: [ " ,name, " ] killed an enemy")
+                        print("player: [ " ,name, " ] took -12 of his 100 health points")
+                        print("player: [ " ,name, " ] killed an 2nd enemy")
+                        print("")
+                        print("[TASK 1 COMPLETED]")
+                        print("")
+                        print("")
+                        print("You made great job today !!!")
+                        print("You can go to the pub and drink some beer...")
+                        print("player: [ " ,name, " ] moved to the pub")
+                        print("player: [ " ,name, " ] drank a beer")
+                        print("player: [ " ,name, " ] drank next beer")
+                        print("player: [ " ,name, " ] drank next beer")
+                        print("player: [ " ,name, " ] came back to home")
+                        c = input()
+                        print("")
+                        print("In front of your house is some Horde enemie...")
+                        print("He wants to kill you...")
+
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
 
             elif yn == "n":
                 print("")
-                print("You are now out of the bank...")
+                print("You are now in the city...")
+                print("Here we go, lets go to the barbershop...")
+                print("player: [", name, "] goes to the barbershop")
+                print("player: [", name, "] took a seat")
+                print("player: [", name, "] took red hair")
+                print("player: [", name, "] took a long hair")
+                print("player: [", name, "] took a big beard")
+                print("player: [", name, "] took a red T-hirt")
+                print("player: [", name, "] took a black shorts")
+                print("player: [", name, "] exited the barbershop")
+                print("player: [", name, "] went to the pub")
+                print("player: [", name, "] took a beer")
+                print("player: [", name, "] took a next beer")
+                print("player: [", name, "] is drunk")
+                print("")
+                b = input()
+                print("You are very drunnk now...")
+                print("Move to your house and go sleep...")
+                print("player: [", name, "] went to the house")
+                print("player: [", name, "] went sleep")
+                a = input()
+                print("Good Morning!!!")
+                print("You are very tired now...")
+                print("Go to Pet shop and buy a pet...")
+                c = input()
+                print("player: [", name, "] went to the pet shop")
+                petsmoney = 500
+                print("")
+                print("You are now in the Pet shop...")
+                print("*---------------PET SHOP---------------*")
+                print("1. Wolf: 80 g             money: 500 g")
+                print("2. Raptor: 100 g")
+                print("3. Worm: 120 g")
+                print("4. DragonHawk: 150 g")
+                print("5. Riverbeast: 200 g")
+                print("6. Dragon: 300 g")
+                print("*--------------------------------------*")
+                choose = input("CHOOSE (1/2/3/4/5/6): ")
+                while choose != "1" and choose != "2" and choose != "3" and choose != "4" and choose != "5" and choose != "6":
+                    print("Invalid input...")
+                    choose = input("CHOOSE (1/2/3/4/5/6): ")
+
+                if choose == "1":
+                    print("")
+                    print("You bought a Wolf...")
+                    petsmoney = petsmoney - 80
+
+                elif choose == "2":
+                    print("")
+                    print("You bought a Raptor...")
+                    petsmoney = petsmoney - 100
+
+                elif choose == "3":
+                    print("")
+                    print("You bought a Worm...")
+                    petsmoney = petsmoney - 120
+
+                elif choose == "4":
+                    print("")
+                    print("You bought a DragonHawk...")
+                    petsmoney = petsmoney - 150
+
+                elif choose == "5":
+                    print("")
+                    print("You bought a Riverbeast...")
+                    petsmoney = petsmoney - 200
+
+                elif choose == "6":
+                    print("")
+                    print("You bought a Dragon...")
+                    petsmoney = petsmoney - 300
+
+                print("")
+                print("This is your start in this game so the pet will be very useful...")
+                print("You need to move fast around the map to find and take your tasks faster...")
+                print("Hewre you are, you can also use the pet to help you...")
+                print("")
+
+                print("Move fast to your house, someone burned your house...")
+                print("player: [", name, "] went to the house")
+                print("")
+                print("Look at the house, it is very burnt...")
+                print("There is running some Horde player...")
+                print("Try to catch him !!!")
+                print("")
+                print("player: [", name, "] caught the Horde player")
+                print("player: [", name, "] started fighting")
+
+                ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
 
         elif Alicity == "2":
             print("")
@@ -622,7 +873,7 @@ def game():
                     print("On the way you see a group of enemies...")
                     print("They will try to attack you but you need to kill them...")
                     print("They are 4")
-                    print("")
+                    v = input()
                     print("")
                     print("player: [", name, "] killed enemie 1")
                     print("player: [", name, "] took small damage from enemie 2")
@@ -634,10 +885,13 @@ def game():
                     print("[TASK 1 COMPLETED]")
                     print("Very nice job, you killed 4 enemies...")
                     print("")
+                    a = input()
                     print("You need to go to buy some HEALTHKIT...")
                     print("player: [", name, "] bought a HEALTHKIT")
                     print("")
+                    b = input() 
                     print("[TASK 2 STARTED]")
+                    c = input()
                     print("Welcome in the Central !!!")
                     print("There is a quest waiting for you...")
                     print("")
@@ -646,9 +900,28 @@ def game():
                     print("")
                     print("Here we are, the bridge !!!")
                     print("[TASK 2 COMPLETED]")
+                    print("")
+                    print("")
+                    print("You made great job today !!!")
+                    print("You can go to the pub and drink some beer...")
+                    print("player: [ " ,name, " ] moved to the pub")
+                    print("player: [ " ,name, " ] drank a beer")
+                    print("player: [ " ,name, " ] drank next beer")
+                    print("player: [ " ,name, " ] drank next beer")
+                    print("player: [ " ,name, " ] came back to home")
+                    c = input()
+                    print("")
+                    print("In front of your house is some Horde enemie...")
+                    print("He wants to kill you...")
+
+                    ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                    ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+                    ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+
 
                 elif choose == "2":
                     print("")
+                    print("[TASK 1 STARTED]")
                     print("Welcome in the Central !!!")
                     print("There is a quest waiting for you...")
                     print("")
@@ -656,7 +929,7 @@ def game():
                     print(name, " : Ok, I will do it...")
                     print("")
                     print("Here we are, the bridge !!!")
-                    print("[TASK 2 COMPLETED]")
+                    print("[TASK 1 COMPLETED]")
                     print("")
                     print("[TASK 2 STARTED]")
                     print("Welcome in the WILSONS FOREST !!!")
@@ -678,6 +951,35 @@ def game():
                     print("You need to go to buy some HEALTHKIT...")
                     print("player: [", name, "] bought a HEALTHKIT")
                     print("")
+                    print("")
+                    print("You made great job today !!!")
+                    print("You can go to the pub and drink some beer...")
+                    print("player: [ " ,name, " ] moved to the pub")
+                    print("player: [ " ,name, " ] drank a beer")
+                    print("player: [ " ,name, " ] drank next beer")
+                    print("player: [ " ,name, " ] drank next beer")
+                    print("player: [ " ,name, " ] came back to home")
+                    c = input()
+                    print("")
+                    print("In front of your house is some Horde enemie...")
+                    print("He wants to kill you...")
+            
+            elif yn == "n":
+                print("You are out of the Pet shop")
+                print("You are going to Pub...")
+                print("player: [",name,"] came to the Pub")
+                print("player: [",name,"] drank a beer")
+                print("player: [",name,"] drank next beer")
+                print("player: [",name,"] drank next beer")
+                print("")
+                c = input()
+                print("You are out lets go home..")
+                print("player: [",name,"] came back in front of home")
+                print("")
+                print("In front of your house is some Horde enemie...")
+                print("He wants to kill you...")
+
+                print("")
 
     elif rase == "2":
         print("")
@@ -706,74 +1008,91 @@ def game():
                 print("Invalin input...")
                 Aliance = input("CHOOSE YOUR CLASS: ")
 
+            
+
             if classs == "1":
-                warriorattack = 10
-                warriordefence = 7
-                warriorluck = 4
-                warriorrange = 4
-                warriormagic = 1
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", warriorattack)
-                print("DEFENCE: ", warriordefence)
-                print("LUCK: ", warriorluck)
-                print("RANGE: ", warriorrange)
-                print("MAGIC: ", warriormagic)
+                print("ATTACK: 10")
+                print("DEFENCE: 10")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "2":
-                paladinattack = 10
-                paladindefence = 8
-                paladinluck = 4
-                paladinrange = 3
-                paladinmagic = 4
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Alliance(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", paladinattack)
-                print("DEFENCE: ", paladindefence)
-                print("LUCK: ", paladinluck)
-                print("RANGE: ", paladinrange)
-                print("MAGIC: ", paladinmagic)
+                print("ATTACK: 15")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "3":
-                hunterattack = 10
-                hunterdefence = 7
-                hunterluck = 2
-                hunterrange = 5
-                huntermagic = 2
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Alliance(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", hunterattack)
-                print("DEFENCE: ", hunterdefence)
-                print("LUCK: ", hunterluck)
-                print("RANGE: ", hunterrange)
-                print("MAGIC: ", huntermagic)
-                print("")
+                print("ATTACK: 17")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "4":
-                rogueattack = 8
-                roguedefence = 8
-                rogueluck = 3
-                roguerange = 6
-                roguemagic = 5
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Alliance(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("NAME: ", name)
-                print("ATTACK: ", rogueattack)
-                print("DEFENCE: ", roguedefence)
-                print("LUCK: ", rogueluck)
-                print("RANGE: ", roguerange)
-                print("MAGIC: ", roguemagic)
+                print("ATTACK: 12")
+                print("DEFENCE: 12")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
@@ -791,75 +1110,94 @@ def game():
                 print("Invalid input...")
                 Aliance = input("CHOOSE YOUR CLASS: ")
 
+            
+
             if classs == "1":
-                warriorattack = 10
-                warriordefence = 7
-                warriorluck = 4
-                warriorrange = 4
-                warriormagic = 1
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Alliance(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
+
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", warriorattack)
-                print("DEFENCE: ", warriordefence)
-                print("LUCK: ", warriorluck)
-                print("RANGE: ", warriorrange)
-                print("MAGIC: ", warriormagic)
+                print("ATTACK: 10")
+                print("DEFENCE: 10")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "2":
-                priestattack = 7
-                priestdefence = 6
-                priestluck = 6.5
-                priestrange = 8
-                priestmagic = 7
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Alliance(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", priestattack)
-                print("DEFENCE: ", priestdefence)
-                print("LUCK: ", priestluck)
-                print("RANGE: ", priestluck)
-                print("MAGIC: ", priestmagic)
+                print("ATTACK: 16")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "3":
-                hunterattack = 10
-                hunterdefence = 7
-                hunterluck = 2
-                hunterrange = 5
-                huntermagic = 2
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", hunterattack)
-                print("DEFENCE: ", hunterdefence)
-                print("LUCK: ", hunterluck)
-                print("RANGE: ", hunterrange)
-                print("MAGIC: ", huntermagic)
+                print("ATTACK: 17")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "4":
-                rogueattack = 8
-                roguedefence = 8
-                rogueluck = 3
-                roguerange = 6
-                roguemagic = 5
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", rogueattack)
-                print("DEFENCE: ", roguedefence)
-                print("LUCK: ", rogueluck)
-                print("RANGE: ", roguerange)
-                print("MAGIC: ", roguemagic)
+                print("ATTACK: 12")
+                print("DEFENCE: 12")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
@@ -877,75 +1215,93 @@ def game():
                 print("Invalid input...")
                 Aliance = input("CHOOSE YOUR CLASS: ")
 
+            
+
             if classs == "1":
-                mageattack = 9.5
-                magedefence = 6
-                mageluck = 5
-                magerange = 9
-                magemagic = 8
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", mageattack)
-                print("DEFENCE: ", magedefence)
-                print("LUCK: ", mageluck)
-                print("RANGE: ", magerange)
-                print("MAGIC: ", magemagic)
+                print("ATTACK: 10")
+                print("DEFENCE: 12")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "2":
-                druidattack = 9
-                druiddefence = 5
-                druidluck = 7
-                druidrange = 8
-                druidmagic = 7
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", druidattack)
-                print("DEFENCE: ", druiddefence)
-                print("LUCK: ", druidluck)
-                print("RANGE: ", druidrange)
-                print("MAGIC: ", druidmagic)
+                print("ATTACK: 16")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "3":
-                hunterattack = 10
-                hunterdefence = 7
-                hunterluck = 2
-                hunterrange = 5
-                huntermagic = 2
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", hunterattack)
-                print("DEFENCE: ", hunterdefence)
-                print("LUCK: ", hunterluck)
-                print("RANGE: ", hunterrange)
-                print("MAGIC: ", huntermagic)
+                print("ATTACK: 17")
+                print("DEFENCE: 8")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
             elif classs == "4":
-                rogueattack = 8
-                roguedefence = 8
-                rogueluck = 3
-                roguerange = 6
-                roguemagic = 5
+                player = Alliance(100, 21, 20, "Human")
+                player.sethealth(100)
+                player.setattack(21)
+                player.setdefence(20)
+                player.setname("Warrior")
+                
+                player2 = Horde(100, 20, 10, "Skeleton")
+                player2.sethealth(100)
+                player2.setattack(20)
+                player2.setdefence(10)
+                player2.setname("Skeleton")
                 print("")
                 name = input("NAME OF YOUR CHARACTER: ")
                 print("")
                 print("NAME: ", name)
-                print("ATTACK: ", rogueattack)
-                print("DEFENCE: ", roguedefence)
-                print("LUCK: ", rogueluck)
-                print("RANGE: ", roguerange)
-                print("MAGIC: ", roguemagic)
+                print("ATTACK: 12")
+                print("DEFENCE: 12")
+                print("HEALTH: 100")
                 print("")
                 print("Now we can start to play your own adventure.... WELCOME")
 
@@ -959,6 +1315,175 @@ def game():
     print("")
     while Alicity != "1" and Alicity != "2":
         print("Invalid input...")
+
+    if Alicity == "1":
+        print("")
+        print("You have chosen Orgrimmar")
+        print("")
+        print("You have chosen to start your journey in the city of Orgrimmar")
+        print("Tell me where you want to go?: ")
+        print("1. Pet shop ")
+        choose = input("CHOOSE YOUR PATH: ")
+        while choose != "1":
+            print("Invalid input...")
+            choose = input("CHOOSE YOUR PATH: ")
+
+        petsmoney = 500
+        print("")
+        print("You are now in the Pet shop...")
+        print("*---------------PET SHOP---------------*")
+        print("1. Wolf: 80 g             money: 500 g")
+        print("2. Raptor: 100 g")
+        print("3. Worm: 120 g")
+        print("4. DragonHawk: 150 g")
+        print("5. Riverbeast: 200 g")
+        print("6. Dragon: 300 g")
+        print("*--------------------------------------*")
+        choose = input("CHOOSE (1/2/3/4/5/6): ")
+        while choose != "1" and choose != "2" and choose != "3" and choose != "4" and choose != "5" and choose != "6":
+            print("Invalid input...")
+            choose = input("CHOOSE (1/2/3/4/5/6): ")
+        if choose == "1":
+            print("")
+            print("You bought a Wolf...")
+            petsmoney = petsmoney - 80
+        elif choose == "2":
+            print("")
+            print("You bought a Raptor...")
+            petsmoney = petsmoney - 100
+        elif choose == "3":
+            print("")
+            print("You bought a Worm...")
+            petsmoney = petsmoney - 120
+        elif choose == "4":
+            print("")
+            print("You bought a DragonHawk...")
+            petsmoney = petsmoney - 150
+        elif choose == "5":
+            print("")
+            print("You bought a Riverbeast...")
+            petsmoney = petsmoney - 200
+        elif choose == "6":
+            print("")
+            print("You bought a Dragon...")
+            petsmoney = petsmoney - 300
+
+        print("")
+        print("This is your start in this game so the pet will be very useful...")
+        print("You need to move fast around the map to find and take your tasks faster...")
+        print("Hewre you are, you can also use the pet to help you...")
+        print("")
+        print("Look, you got your first tasks...")
+        print("--------------------TASKS--------------------")
+        print("1. Kill the Worgen")
+        print("2. Go to the Palace of the Sunstrider and take the poison...")
+        print("--------------------------------------------")
+        choose = input("CHOOSE (1/2): ")
+        while choose != "1" and choose != "2":
+            print("Invalid input...")
+            choose = input("CHOOSE (1/2): ")
+
+        if choose == "1":
+            print("Look, there is a Worgen in the forest...")
+            print("You need to kill him...")
+            print("[TASK 1 STARTED]")
+            print("")
+            print("player: [" , name , "] gave to Worgen -50 hp")
+            print("player: [" , name , "] gave to Worgen -18 hp")
+            print("NPC: [ Worgen ] gave to [" ,name, "] -20 hp")
+            print("player: [" , name , "] killed the Worgen")
+            print("[TASK 1 COMPLETED]")
+            print("")
+            print("Here you got your second task...")
+            enter = input()
+            print("")
+            print("[TASK 2 STARTED]")
+            print("You need to go to the Palace of the Sunstrider and take the poison...")
+            print("Bring the poison to the small house where lives the magician...")
+            print("")
+            enter = input()
+            print("")
+            print("player: [" , name , "] came to the Palace of the Sunstrider")
+            print("player: [" , name , "] took the poison")
+            print("player: [" , name , "] came to small house")
+            print("player: [" , name , "] gave to Magician the poison")
+            print("[TASK 2 FINISHED]")
+            print("")
+            print("You made great job today !!!")
+            print("You can go to the pub and drink some beer...")
+            print("player: [ " ,name, " ] moved to the pub")
+            print("player: [ " ,name, " ] drank a beer")
+            print("player: [ " ,name, " ] drank next beer")
+            print("player: [ " ,name, " ] drank next beer")
+            print("player: [ " ,name, " ] came back to home")
+            c = input()
+            print("")
+            print("In front of your house is some Horde enemie...")
+            print("He wants to kill you...")
+
+
+            ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+            ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+            ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+
+        elif choose == "2":
+            print("")
+            print("[TASK 1 STARTED]")
+            print("You need to go to the Palace of the Sunstrider and take the poison...")
+            print("Bring the poison to the small house where lives the magician...")
+            print("")
+            enter = input()
+            print("")
+            print("player: [" , name , "] came to the Palace of the Sunstrider")
+            print("player: [" , name , "] took the poison")
+            print("player: [" , name , "] came to small house")
+            print("player: [" , name , "] gave to Magician the poison")
+            print("[TASK 1 FINISHED]")
+            print("Here you got your second task...")
+            enter = input()
+            print("Look, there is a Worgen in the forest...")
+            print("You need to kill him...")
+            print("[TASK 1 STARTED]")
+            print("")
+            print("player: [" , name , "] gave to Worgen -50 hp")
+            print("player: [" , name , "] gave to Worgen -18 hp")
+            print("NPC: [ Worgen ] gave to [" ,name, "] -20 hp")
+            print("player: [" , name , "] killed the Worgen")
+            print("[TASK 1 COMPLETED]")
+            print("")
+            print("")
+            print("You made great job today !!!")
+            print("You can go to the pub and drink some beer...")
+            print("player: [ " ,name, " ] moved to the pub")
+            print("player: [ " ,name, " ] drank a beer")
+            print("player: [ " ,name, " ] drank next beer")
+            print("player: [ " ,name, " ] drank next beer")
+            print("player: [ " ,name, " ] came back to home")
+            c = input()
+            print("")
+            print("In front of your house is some Horde enemie...")
+            print("He wants to kill you...")
+                
+        
+
+            ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+            ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+            ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##
+
+    elif Alicity == "2":
+        print("")
+        print("You have chosen Silvermoon City")
+        print("")
+        print("You have chosen to start your journey in the city of Silvermoon City")
+        print("Tell me where you want to go?: ")
+        print("1. Bank ")
+        print("2. Pet Shop")
+        choose = input("CHOOSE YOUR PATH: ")
+        while choose != "1":
+            print("Invalid input...")
+            choose = input("CHOOSE YOUR PATH: ")
+
+        
 
 def enemyGen(levelBoss):
     temp = []
@@ -992,5 +1517,5 @@ def enemyGen(levelBoss):
 
 def main():
     welcomescreen()
-    game()
+    vytvoreniepostavy()
 main()
